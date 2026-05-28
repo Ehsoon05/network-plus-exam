@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Network+ Exam Practice</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="setupView" class="panel setup-panel">
+        <div class="brand-row">
+          <div>
+            <p class="eyebrow">تمرین آزمون</p>
+            <h1>Network+ Exam</h1>
+          </div>
+          <div class="question-total">
+            <strong>100</strong>
+            <span>سوال</span>
+          </div>
+        </div>
+
+        <form id="setupForm" class="setup-grid">
+          <label class="field">
+            <span>تعداد سوال</span>
+            <input id="questionCount" type="number" min="1" max="100" value="20" required>
+          </label>
+
+          <label class="field">
+            <span>مدت آزمون، دقیقه</span>
+            <input id="durationMinutes" type="number" min="1" max="240" value="30" required>
+          </label>
+
+          <button class="primary-action" type="submit">شروع آزمون</button>
+        </form>
+
+        <div class="rules">
+          <div>
+            <strong>حد قبولی</strong>
+            <span>۷۰٪ پاسخ صحیح</span>
+          </div>
+          <div>
+            <strong>انتخاب سوال</strong>
+            <span>کاملا تصادفی از بین ۱۰۰ سوال</span>
+          </div>
+          <div>
+            <strong>چندجوابی</strong>
+            <span>فقط سوال‌های چندپاسخه با چک‌باکس نمایش داده می‌شوند</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="examView" class="panel exam-panel hidden">
+        <header class="exam-header">
+          <div>
+            <p class="eyebrow">در حال آزمون</p>
+            <h2 id="examTitle">سوال ۱ از ۲۰</h2>
+          </div>
+          <div class="exam-stats">
+            <div>
+              <span>زمان</span>
+              <strong id="timer">00:00</strong>
+            </div>
+            <div>
+              <span>پاسخ داده‌شده</span>
+              <strong id="answeredCount">0</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <article class="question-card" dir="ltr">
+          <div id="questionMeta" class="question-meta"></div>
+          <h3 id="questionText"></h3>
+          <div id="optionsList" class="options-list"></div>
+        </article>
+
+        <nav class="exam-actions" aria-label="کنترل سوال‌ها">
+          <button id="prevBtn" class="secondary-action" type="button">قبلی</button>
+          <div class="step-actions">
+            <button id="nextBtn" class="secondary-action" type="button">بعدی</button>
+            <button id="submitBtn" class="primary-action" type="button">پایان آزمون</button>
+          </div>
+        </nav>
+      </section>
+
+      <section id="resultView" class="panel result-panel hidden">
+        <div id="resultBadge" class="result-badge"></div>
+        <h2 id="resultTitle"></h2>
+        <p id="resultSummary"></p>
+
+        <div class="score-grid">
+          <div>
+            <span>نمره از ۱۰۰</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div>
+            <span>درست</span>
+            <strong id="correctValue">0</strong>
+          </div>
+          <div>
+            <span>غلط یا بدون پاسخ</span>
+            <strong id="wrongValue">0</strong>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button id="reviewWrongBtn" class="secondary-action" type="button">دیدن سوالات غلط</button>
+          <button id="restartBtn" class="primary-action" type="button">آزمون جدید</button>
+        </div>
+
+        <div id="reviewList" class="review-list hidden"></div>
+      </section>
+    </main>
+
+    <script src="assets/questions.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
